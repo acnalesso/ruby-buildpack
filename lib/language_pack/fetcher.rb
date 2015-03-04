@@ -31,6 +31,7 @@ module LanguagePack
 
     private
     def curl_command(command)
+      puts "MIKE: fetching: curl #{command}"
       "set -o pipefail; curl --fail --retry 3 --retry-delay 1 --connect-timeout #{curl_connect_timeout_in_seconds} --max-time #{curl_timeout_in_seconds} #{command}"
     end
 
