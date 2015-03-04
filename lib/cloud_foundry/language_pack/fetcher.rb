@@ -17,7 +17,9 @@ module LanguagePack
         exit 1
       end
 
-      rendered_command.sub(url, translated_url)
+      rendered_command.sub(url, translated_url).tap do |real_cmd|
+        puts "MIKE: fetching: curl #{real_cmd}"
+      end
     end
   end
 end
